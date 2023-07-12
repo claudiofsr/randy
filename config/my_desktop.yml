@@ -1,0 +1,114 @@
+---
+settings:
+  # color_bar:   "#fff"
+  # color_label: "#eee"
+  # color_text:  "#fff"
+  # decoration: false
+  # resizable: false
+  # skip_taskbar: true
+
+  color_background: "#656565"
+  color_bar:      "#e1eeff"
+  color_bar_med:  "#ffeeaa"
+  color_bar_high: "#ffaaaa"
+
+  color_label: "#87d7ff"
+  color_text:  "#e1eeeb"
+
+  # font_family: "\"Droid Sans Mono\""
+  # font_family: "\"Noto Sans Mono ExtraCondensed Medium\""
+  font_family: "\"Anadale Mono Regular\""
+  font_size: medium
+  timeout: 1
+  xpos: 3269
+  ypos: 0
+  mod_top: 2
+  mod_fs:  5
+
+ui:
+  - text: SYSTEM
+    type: system
+    items:
+      - func: hostname
+        text: "Hostname:"
+
+      - func: kernel
+        text: "Kernel:"
+
+      - func: uptime
+        text: "Uptime:"
+
+      - func: cpu_usage
+        text: "CPU usage:"
+        widget: bar
+
+      - func: sensor_info
+        sensor_name: k10temp-pci-00c3
+        label_name: Tccd1
+        val: "{}C"
+        text: "CPU ccd1 temp:"
+        whole: true
+
+      - func: sensor_info
+        sensor_name: k10temp-pci-00c3
+        label_name: Tccd2
+        val: "{}C"
+        text: "CPU ccd2 temp:"
+        whole: true
+
+      # - func: sensor_info
+      #   sensor_name: k10temp-pci-00c3
+      #   label_name: Vcore
+      #   val: "{}mV"
+      #   text: "CPU vcore:"
+      #   whole: false
+
+      - func: nvidia_gpu_temp
+        idx: 0
+        text: "GPU0 Temp:"
+
+      - func: nvidia_gpu_temp
+        idx: 1
+        text: "GPU1 Temp:"
+
+      - func: ram_usage
+        text: "RAM usage:"
+        widget: bar
+
+      - func: procs_count
+        text: "Running processes:"
+
+      - func: load
+        text: "Load:"
+
+  - text: CPUS
+    type: cpus
+    func: cpus
+    text: "CPU"
+    split: true
+
+  - text: TOP CPU
+    type: cpu_consumers
+    limit: 5
+
+  - text: TOP MEMORY
+    type: mem_consumers
+    limit: 5
+
+  - text: NETWORKING
+    type: net
+    items:
+      - name: ige00
+        interface: ige00
+      - name: mel00
+        interface: mel00
+
+  - text: FILESYSTEM
+    type: filesystem
+    items:
+      - text: "boot:"
+        mount_point: /boot
+      - text: "root:"
+        mount_point: /
+      - text: "noir:"
+        mount_point: /mnt/noir/scratch

@@ -1,0 +1,33 @@
+[package]
+name = "bench"
+version = "0.1.0"
+authors = ["Ian Page Hands <iphands@gmail.com>"]
+edition = "2018"
+publish = false
+
+[[bench]]
+name = "proc"
+harness = false
+
+[["bench"]]
+name = "macro"
+harness = false
+
+[["bench"]]
+name = "direntry"
+harness = false
+
+[["bench"]]
+name = "digit_test"
+harness = false
+
+[["bench"]]
+name = "split"
+harness = false
+
+[["bench"]]
+name = "bat_test"
+harness = false
+
+[dev-dependencies]
+criterion = "0.5"

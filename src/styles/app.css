@@ -1,0 +1,81 @@
+window {
+    background-color: { color_background };
+    color: { color };
+    opacity: { base_opacity };
+    font-family: { font_family };
+    font-size: { font_size };
+}
+
+.container {
+    padding: 10px;
+}
+
+.frame {
+    border: none;
+    padding-bottom: 0.25em;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+}
+
+* {
+    border-color: { color_borders };
+}
+
+.innerbox {
+    padding-bottom: 0.25em;
+}
+
+label.val {
+    font-weight: bolder;
+    padding-right: 0.5em;
+}
+
+label.key {
+    color: { color_label };
+    padding-left: 0.5em;
+}
+
+progressbar {
+    padding-left:   0.5em;
+    padding-right:  0.5em;
+    padding-bottom: 3px;
+    padding-top:    0px;
+}
+
+frame label {
+    padding-right: 0.5em;
+    padding-left:  0.5em;
+}
+
+trough {
+    background-color: { color_trough };
+    min-height: 10px;
+}
+
+progressbar.high > trough > progress {
+    background-color: { color_bar_high };
+}
+
+progressbar.med > trough > progress {
+    background-color: { color_bar_med };
+}
+
+trough > progress {
+    background-color: { color_bar } ;
+}
+
+progress, trough {
+    min-height: { bar_height };
+}
+
+.top-frame label {
+    font-size: { font_size_top };
+}
+
+.top-frame label:first-child {
+    color: { color_label };
+}
+
+.top-frame label:not(:first-child) {
+    font-weight: bold;
+}
